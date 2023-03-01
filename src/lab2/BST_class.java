@@ -125,11 +125,38 @@ public class BST_class {
             }
         }
 
+//-------------------------------------------------------------------
+    public static void printPathFromTo(Node root, Node node1, Node node2) {
+        List<Node> path = new ArrayList<>();
+        if (findPath(root, node1, path) && findPath(root, node2, path)) {
+            for (int i = path.size() - 1; i >= 0; i--) {
+                System.out.print(path.get(i).key + " ");
+            }
+        } else {
+            System.out.println("No path exists between " + node1.key + " and " + node2.key);
+        }
+    }
+
+    private static boolean findPath(Node root, Node node, List<Node> path) {
+        if (root == null) {
+            return false;
+        }
+        path.add(root);
+        if (root == node) {
+            return true;
+        }
+        if (findPath(root.left, node, path) || findPath(root.right, node, path)) {
+            return true;
+        }
+        path.remove(path.size() - 1);
+        return false;
+    }
+
+//---------------------------------------------
 
 
 
-
-            //print leafs, tree, add , remove, optimize and more ----- tasks
+    //print leafs, tree, add , remove, optimize and more ----- tasks
             public static void main(String[] args) {
 
                 //we can replace this mess with a simple add method
