@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="94e740df-f88f-453a-abee-95c99579407c" name="Changes" comment="Homework ver1.0.1 beta">
+    <list default="true" id="94e740df-f88f-453a-abee-95c99579407c" name="Changes" comment="Homework ver1.2 beta2 -- Clean version">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/lab2/BST_class.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lab2/BST_class.java" afterDir="false" />
     </list>
@@ -88,7 +88,8 @@
       <updated>1677660641869</updated>
       <workItem from="1677660642938" duration="536000" />
       <workItem from="1677661334670" duration="5683000" />
-      <workItem from="1677677979109" duration="886000" />
+      <workItem from="1677677979109" duration="1014000" />
+      <workItem from="1678222426240" duration="3406000" />
     </task>
     <task id="LOCAL-00001" summary="Homework ver1.0 beta">
       <created>1677676635756</created>
@@ -111,7 +112,21 @@
       <option name="project" value="LOCAL" />
       <updated>1677677094770</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Homework ver1.2 beta2">
+      <created>1677678985951</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1677678985951</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Homework ver1.2 beta2 -- Clean version">
+      <created>1677679045764</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1677679045764</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -131,7 +146,9 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Homework ver1.0 beta" />
     <MESSAGE value="Homework ver1.0.1 beta" />
-    <option name="LAST_COMMIT_MESSAGE" value="Homework ver1.0.1 beta" />
+    <MESSAGE value="Homework ver1.2 beta2" />
+    <MESSAGE value="Homework ver1.2 beta2 -- Clean version" />
+    <option name="LAST_COMMIT_MESSAGE" value="Homework ver1.2 beta2 -- Clean version" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
