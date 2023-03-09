@@ -2,21 +2,173 @@ package lab2;
 
 import java.util.*;
 
-//Homework make BST all functions and such;
+
+//Homework AVL Trees
+class Node {
+    int key, balanceFactor;
+    Node left, right, parent;
+
+    public Node(int key) {
+        this.key = key;
+        this.balanceFactor = 0;
+    }
+}
+
+public  class AVLTree {
 
 
-public class BST_class {
+    private static final int N = 100000;
+    Node root;
+
+    private void updateBalanceFactor(Node node) {
+        node.balanceFactor = height(node.right) - height(node.left);
+    }
+
+    private int height(Node node) {
+        if (node == null)
+            return 0;
+        return 1 + Math.max(height(node.left), height(node.right));
+    }
+
+    private Node rightRotate(Node node) {
+        Node newRoot = node.left;
+        node.left = newRoot.right;
+        if (node.left != null)
+            node.left.parent = node;
+        newRoot.right = node;
+        newRoot.parent = node.parent;
+        node.parent = newRoot;
+
+        updateBalanceFactor(node);
+        updateBalanceFactor(newRoot);
+
+        return newRoot;
+    }
+
+    private Node leftRotate(Node node) {
+        Node newRoot = node.right;
+        node.right = newRoot.left;
+        if (node.right != null)
+            node.right.parent = node;
+        newRoot.left = node;
+        newRoot.parent = node.parent;
+        node.parent = newRoot;
+
+        updateBalanceFactor(node);
+        updateBalanceFactor(newRoot);
+
+        return newRoot;
+    }
+
+    private Node balance(Node node) {
+        updateBalanceFactor(node);
+
+        if (node.balanceFactor == -2) {
+            if (node.left.balanceFactor > 0)
+                node.left = leftRotate(node.left);
+            return rightRotate(node);
+        } else if (node.balanceFactor == 2) {
+            if (node.right.balanceFactor < 0)
+                node.right = rightRotate(node.right);
+            return leftRotate(node);
+        }
+
+        return node;
+    }
+
+    public void insert(int key) {
+        root = insert(root, null, key);
+    }
+
+    private Node insert(Node node, Node parent, int key) {
+        if (node == null)
+            return new Node(key);
+
+        if (key < node.key)
+            node.left = insert(node.left, node, key);
+        else if (key > node.key)
+            node.right = insert(node.right, node, key);
+        else
+            return node;
+
+        node = balance(node);
+
+        if (node.parent == null)
+            root = node;
+
+        return node;
+
+    }
+
+    public Node search(int key) {
+        Node node = root;
+        while (node != null) {
+            if (key == node.key) {
+                return node;
+            } else if (key < node.key) {
+                node = node.left;
+            } else {
+                node = node.right;
+            }
+        }
+        return null;
+    }
+
+
+    private static void searchTime(AVLTree tree, int key) {
+        long start = System.nanoTime();
+        Node node = tree.search(key);
+        long end = System.nanoTime();
+        if (node == null) {
+            System.out.println("Key " + key + " not found");
+        } else {
+            System.out.println("Search time for key " + key + ": " + (end - start) + " nanoseconds");
+        }
+    }
+
+    public static void main(String[] args) {
+        AVLTree tree = new AVLTree();
+
+        // Insert N random keys
+        long start = System.nanoTime();
+        Random random = new Random();
+        for (int i = 0; i < N; i++) {
+            int key = random.nextInt(N);
+            tree.insert(key);
+        }
+        long end = System.nanoTime();
+        System.out.println("Insertion time for " + N + " random keys: " + (end - start)/1000000 + " miliseconds");
+
+        tree = new AVLTree();
+
+        // Insert N keys in increasing order
+        start = System.nanoTime();
+        for (int i = 0; i < N; i++) {
+            tree.insert(i);
+        }
+        end = System.nanoTime();
+        System.out.println("Insertion time for " + N + " keys in increasing order: " + (end - start)/1000000 + " miliseconds");
+
+        AVLTree.searchTime(tree,100);
+    }
+
+
+}
+
+
+class BST_class {
 
     public static int height = 0;
 
     public static class Node {
-        int key;
-        Node left, right;
+        int key,balanceleft,balanceright;
+        Node left, right, parent;
 
         Node(int key) {
             this.key = key;
             left = null;
             right = null;
+            parent = null;
         }
 
 
@@ -237,18 +389,14 @@ public class BST_class {
         // testing isBalancedNode method
         int result = root.isBalancedNode(root);
         if (result >= 0) {
-            System.out.println("Tree is balanced");
+            System.out.println("Tree is balanced" + result);
         } else {
-            System.out.println("Tree is not balanced");
+            System.out.println("Tree is not balanced"+ result);
         }
 
         // testing searchClosestNode method for  7
         int closestNode = BST_class.Node.searchClosestNode(root, 7);
         System.out.println("Closest node to 7 is: " + closestNode);
-
-        // testing searchClosestNode method for 11
-        closestNode = BST_class.Node.searchClosestNode(root, 11);
-        System.out.println("Closest node to 11 is: " + closestNode);
 
         // testing checkExistTwoNodesWithSum method
         boolean result2 = BST_class.Node.checkExistTwoNodesWithSum(root, 21);
