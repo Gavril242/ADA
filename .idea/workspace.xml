@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="94e740df-f88f-453a-abee-95c99579407c" name="Changes" comment="Homework ver1.5 - last testing build - god help me live">
+    <list default="true" id="94e740df-f88f-453a-abee-95c99579407c" name="Changes" comment="Homework ver2.0 homewrok lab4">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lab2/BST_class.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lab2/AVLTree.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lab2/AVLTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lab2/AVLTree.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,9 +84,23 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="NodeBST" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="lab2.NodeBST" />
+      <module name="ADA-Lab2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="lab2.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.AVLTree" />
+        <item itemvalue="Application.NodeBST" />
         <item itemvalue="Application.BST_class" />
         <item itemvalue="Application.BST_class$Node" />
       </list>
@@ -104,6 +118,8 @@
       <workItem from="1677661334670" duration="5683000" />
       <workItem from="1677677979109" duration="1014000" />
       <workItem from="1678222426240" duration="9090000" />
+      <workItem from="1678377497643" duration="127000" />
+      <workItem from="1678634433397" duration="2803000" />
     </task>
     <task id="LOCAL-00001" summary="Homework ver1.0 beta">
       <created>1677676635756</created>
@@ -147,7 +163,14 @@
       <option name="project" value="LOCAL" />
       <updated>1678225871400</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Homework ver2.0 homewrok lab4">
+      <created>1678377530155</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1678377530155</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -170,7 +193,8 @@
     <MESSAGE value="Homework ver1.2 beta2" />
     <MESSAGE value="Homework ver1.2 beta2 -- Clean version" />
     <MESSAGE value="Homework ver1.5 - last testing build - god help me live" />
-    <option name="LAST_COMMIT_MESSAGE" value="Homework ver1.5 - last testing build - god help me live" />
+    <MESSAGE value="Homework ver2.0 homewrok lab4" />
+    <option name="LAST_COMMIT_MESSAGE" value="Homework ver2.0 homewrok lab4" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
